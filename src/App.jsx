@@ -54,16 +54,10 @@ function App() {
   }, [])
 
   const deletenote = async (id) => {
-    try {
-      // Send a DELETE request to the backend endpoint
+    console.log(id);
       await axios.delete(`http://localhost:3000/notes/delete/${id}`);
-  
-      // After successful deletion, update the notes state by fetching the updated notes
       getNotes();
-    } catch (error) {
-      console.error('Error deleting note:', error);
-      // Handle error, show message to the user, etc.
-    }
+    
   }
 
 
